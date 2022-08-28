@@ -1,0 +1,63 @@
+<?php
+
+return [
+
+    'success'     => 'success',    
+    'danger'     => 'danger',    
+    'warning'     => 'warning',    
+    'info'     => 'info',    
+
+
+    'direction' => 'ltr',
+    'home' => 'Home',
+    'email' => 'Email Address',
+    'password' => 'Password',
+    'rememberme' => 'Remember me',
+    'login' => 'Login',
+    'sign_in' => 'Login',
+    'forget_password' => 'Forget your password',
+    'do_you_have_not_an_account' =>'Do you haven\'t an account ?',
+    'share' => 'Share',
+
+    'about' => 'about',
+    'business' => 'business',
+    'taste' => 'taste',
+    'live' => 'live',
+    'contact_us' => 'contact us',
+    'live' => 'live',
+    'hero_title' => 'Ancient valley',
+    'hero_subtitle' => 'in an iconic urban',
+    'location' => 'location',
+'media_center' => 'media center',
+'gallery' => 'gallery',
+'contact_center' => 'contact center',
+'stay_connected' => 'stay connected',
+'owned_by' => 'owned by',
+'privacy_policy' => 'privacy policy',
+'trems_of_use' => 'trems of use',
+
+    
+'register' => 'تسجيل',
+'if_you_dont_have_account_you_can_register_from_here' => 'إذا لم يكن لديك حساب قم بتسجيل حساب جديد <a href="register"> من هنا </a>',
+'if_you_have_account_you_can_login_from_here' => 'إذا  كان لديك حساب قم بتسجيل دخول  <a href="login"> من هنا </a>',
+'name_ar' => 'الاسم الكامل',
+'password_confirmation' => 'تأكيد كلمة المرور',
+'fname' => 'first name',
+'lname' => 'last name',
+'phone' => 'Phone',
+'email' => 'Email',
+'body' => 'HOW CAN WE HELP YOU',
+'submit' => 'Submit',
+'need_to_get_in_touch_with_us' => 'NEED TO GET <br />IN TOUCH WITH US?',
+'sent_success' => 'Sent Successfully',
+'welcome_in' => 'Welcome In',
+'event_registeration' => 'event registeration',
+'event_registeration_desc' => 'Please inform all the information',
+'request_order' => 'Request Order',
+'mobile' =>'Mobile',
+'company' => 'Company',
+'name' => 'Name',
+'features' => 'Features',
+'notfound' =>'Not Found',
+
+];

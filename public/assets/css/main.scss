@@ -1,0 +1,28 @@
+$theme-colors : (
+	"primary" : #5468E7,
+	"secondary" : #232340,
+	"danger" : #FFC7DF,
+	"info" : #ECF5FF,
+);
+
+body {
+	direction: rtl;
+	text-align: right;
+}
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+rtl:begin:options: {
+  "autoRename": true,
+  "stringMap":[ {
+    "name": "ltr-rtl",
+    "priority": 100,
+    "search": ["ltr"],
+    "replace": ["rtl"],
+    "options": {
+      "scope": "*",
+      "ignoreCase": false
+    }
+  } ]
+} 
+

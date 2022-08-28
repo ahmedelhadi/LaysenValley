@@ -1,0 +1,7 @@
+.table-responsive {
+  overflow-x: unset;
+}
+
+.dropdown-item .btn {
+  text-align: left;
+}
