@@ -3,7 +3,7 @@
 
         <nav id="navbar" class="navbar navbar-expand-lg pb-lg-5 pt-lg-5">
             <div class="container-fluid">
-                <a class="navbar-brand animate__animated animate__fadeInDown" href="#" >
+                <a class="navbar-brand animate__animated animate__fadeInDown" href="{{url('/')}}" >
                     <img src="{{asset('assets/images/logo.png')}}" alt="" width="212" height="55" class="d-inline-block align-text-middle">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
