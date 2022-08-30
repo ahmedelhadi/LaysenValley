@@ -17,7 +17,7 @@
             </div>	
         </div>
 
-        <div class="col-12 col-sm-7 offset-sm-1 position-absolute  end-0 decor-1"">
+        <div class="col-12 col-sm-7 offset-sm-1 position-absolute about-img  decor-1"">
             <img class="img-fluid block-image" src="{{$about->image ?? 'https://fakeimg.pl/1092x800/'}}  ">
         </div>
     </div>
@@ -140,13 +140,15 @@
                 @if(count($counters->attributes)>0)
 
                     @foreach($counters->attributes as $key => $attribute)
-                        <div class="col-12 col-sm-3 d-flex  justify-content-center align-items-center border-end border-white  animate__animated animate__bounceInLeft">
-                            <div class="image float-start me-2 d-flex justify-content-center align-items-center h4">
-                                @if($attribute->slug == 'from-diplomatic-quarter') D Q @else  <img class="" src="{{asset($attribute->image ?? 'assets/images/green-1.png')}}" alt="">  @endif
-                            </div>
-                            <div class="body ">
-                                <h5 class="mb-1">{{$attribute->getSubTitle()}}</h5>
-                                <p class="mb-0">{{$attribute->getTitle()}}</p>
+                        <div class="col-6 col-sm-3 {{!$loop->last ? 'border-end' : '' }} border-white mb-2">
+                            <div class="d-flex justify-content-center align-items-center  animate__animated animate__bounceInLeft">
+                                <div class="image float-start me-2 d-flex justify-content-center align-items-center h4">
+                                    @if($attribute->slug == 'from-diplomatic-quarter') D Q @else  <img class="" src="{{asset($attribute->image ?? 'assets/images/green-1.png')}}" alt="">  @endif
+                                </div>
+                                <div class="body ">
+                                    <h5 class="mb-1">{{$attribute->getSubTitle()}}</h5>
+                                    <p class="mb-0">{{$attribute->getTitle()}}</p>
+                                </div>
                             </div>
                         </div>
         
@@ -164,7 +166,7 @@
 </section>
 
 
-<section id="features" class="section pt-5 pb-5 vh-100">
+<section id="features" class="section pt-5 pb-5 min-vh-100">
     <div class="container">
         <div class="title text-center mb-5">
             <h2>{{trans('file.features')}}</h2>
@@ -175,13 +177,13 @@
             @foreach($features as $key => $feature)
 
             @if($key == 0)
-                <div class="d-flex justify-content-evenly mb-3 animate__animated animate__bounceInLeft animate__delay">
+                <div class="d-flex flex-wrap justify-content-sm-center mb-3 animate__animated animate__bounceInLeft animate__delay">
             @elseif($key == 3)
-                <div class="d-flex justify-content-evenly mb-3 animate__animated animate__bounceInLeft animate__delay-2s">
+                <div class="d-flex flex-wrap justify-content-sm-center mb-3 animate__animated animate__bounceInLeft animate__delay-2s">
             @elseif($key == 7)
-                <div class="d-flex justify-content-evenly mb-3 animate__animated animate__bounceInLeft animate__delay-3s">
+                <div class="d-flex flex-wrap justify-content-sm-center mb-3 animate__animated animate__bounceInLeft animate__delay-3s">
             @endif
-                <div class="col-12 col-sm-2 text-center ">
+                <div class="col-12 col-sm-2 text-center mb-3">
                     <img class="mb-3" src="{{asset($feature->icon ?? 'assets/images/feature-1.png')}}" alt="">
                     <h2 class="mb-1">{{$feature->counter}}</h2>
                     <small>{{$feature->getTitle()}}</small>
@@ -205,10 +207,10 @@
 
 
 
-<section id="info" class="section pt-5 pb-5 vh-100 ">
+<section id="info" class="section pt-5 pb-5 min-vh-100">
     <div class="container h-100">
 
-        <div class="d-flex justify-content-evenly align-items-center h-100 animate__animated animate__bounceInLeft animate__delay">
+        <div class="d-flex flex-wrap justify-content-sm-center  align-items-center h-100 animate__animated animate__bounceInLeft animate__delay">
 
         @if($info)
         @if(count($info->attributes)>0)
@@ -231,5 +233,7 @@
 
     </div>
 </section>
+
+
 
 @endsection

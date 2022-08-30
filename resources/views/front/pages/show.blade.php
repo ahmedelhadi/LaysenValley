@@ -27,13 +27,14 @@
 					@foreach($page->blocks as $block)
 
 						@if($block->slug == 'business-analytics')
-							<div class="d-flex justify-content-evenly align-items-center mt-5  h-100">
+						
+							<div class="d-flex flex-wrap justify-content-sm-center align-items-center mt-5  h-100">
 								
 								@if(count($block->attributes)>0)
 
 									@foreach($block->attributes as $attribute)
 
-									<div class="col-12 col-sm-3 text-center">
+									<div class="col-12 col-sm-3 text-center mb-3">
 										<img class="mb-3 " src="{{url($attribute->image ?? 'assets/images/Ellipse.png')}}" alt="">
 										<div>
 											<p class="mb-1"><small >{{$attribute->getSubTitle()}}</small></p>
@@ -100,7 +101,7 @@
 				@foreach($page->blocks as $block)
 
 					@if($block->slug == 'live-analytics')
-						<div class="d-flex justify-content-evenly align-items-center  h-100">
+						<div class="d-flex flex-wrap justify-content-sm-center align-items-center  h-100">
 							
 							@if(count($block->attributes)>0)
 
@@ -149,7 +150,7 @@
 		<section id="page-section" class="section pt-5 pb-5 ">
 
 			<div class="container ">
-				<div class="d-flex justify-content-evenly align-items-center">
+				<div class="d-flex justify-content-center align-items-center">
 					<div class="col-12 col-sm-6 page-title text-center mb-2 mt-5">
 						<h5 class="text-uppercase pb-3 text-center">{{$page->getTitle()}}</h5>
 					</div>

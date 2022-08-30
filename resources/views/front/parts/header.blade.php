@@ -7,7 +7,7 @@
                     <img src="{{asset('assets/images/logo.png')}}" alt="" width="212" height="55" class="d-inline-block align-text-middle">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fa fa-bars text-white" aria-hidden="true"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto  animate__animated animate__fadeInDown text-uppercase">

@@ -14,7 +14,7 @@
                     <li><a class="text-uppercase" href="{{url('/pages/contact-us')}}">{{trans('file.location')}}</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-sm-3 block text-center animate__animated animate__bounceInLeft animate__delay-2s">
+            <div class="col-12 col-sm-3 block text-start text-sm-center animate__animated animate__bounceInLeft animate__delay-2s">
                 <h2 class="text-uppercase">
                     {{trans('file.media_center')}}
                 </h2>
@@ -24,7 +24,7 @@
 
                 </ul>
             </div>
-            <div class="col-12 col-sm-3 block text-center animate__animated animate__bounceInLeft animate__delay-3s">
+            <div class="col-12 col-sm-3 block text-start text-sm-center animate__animated animate__bounceInLeft animate__delay-3s">
                 <h2 class="text-uppercase">
                     {{trans('file.contact_center')}}
                 </h2>
@@ -34,7 +34,7 @@
                     <li><a href="mail:{{App\Models\Setting::where('name','email')->first()->value ?? 'info@laysenvalley.sa' }} ">{{App\Models\Setting::where('name','email')->first()->value ?? 'info@laysenvalley.sa' }} </a></li>
                 </ul>
             </div>
-            <div class="col-12 col-sm-3 block text-end animate__animated animate__bounceInLeft animate__delay-4s">
+            <div class="col-12 col-sm-3 block text-start text-sm-end animate__animated animate__bounceInLeft animate__delay-4s">
                 <h2 class="text-uppercase">
                     {{trans('file.stay_connected')}}
                 </h2>
@@ -64,9 +64,9 @@
                         
                       </a>
                                       </div>
-                <div class="col-12 col-sm-3 d-flex align-items-end text-end animate__animated animate__bounceInLeft animate__delay-1s">
+                <div class="col-12 col-sm-3 d-flex align-items-end   animate__animated animate__bounceInLeft animate__delay-1s">
                     
-                    <ul class="list-unstyled text-end">
+                    <ul class="list-unstyled text-start text-sm-end mt-2">
 
                         <li class="">
                             <a class="text-uppercase"  href="{{url('/pages/privacy-policy')}}">
