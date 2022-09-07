@@ -105,6 +105,8 @@ header {
 
 header .navbar {
   z-index: 2;
+  transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+
 }
 
 header .navbar-expand-lg .navbar-nav .nav-link {
@@ -113,9 +115,24 @@ header .navbar-expand-lg .navbar-nav .nav-link {
   color: #fff !important;
 }
 
-header .navbar-expand-lg .navbar-nav .nav-link.active , header .navbar-expand-lg .navbar-nav .nav-link:hover {
+
+.page-business header .navbar-expand-lg .navbar-nav .nav-link.active , header .navbar-expand-lg .navbar-nav .nav-link:hover {
   color: #7A5D7A !important;
 }
+
+.page-taste header .navbar-expand-lg .navbar-nav .nav-link.active , header .navbar-expand-lg .navbar-nav .nav-link:hover {
+  color: #C6B784 !important;
+}
+
+.page-live header .navbar-expand-lg .navbar-nav .nav-link.active , header .navbar-expand-lg .navbar-nav .nav-link:hover {
+  color: #358CAA !important;
+}
+
+.page-contact-us header .navbar-expand-lg .navbar-nav .nav-link.active , header .navbar-expand-lg .navbar-nav .nav-link:hover {
+  color: #333F47 !important;
+}
+
+
 
 .navbar.navbar-fixed-top {
   position: fixed !important;
@@ -128,6 +145,19 @@ header .navbar-expand-lg .navbar-nav .nav-link.active , header .navbar-expand-lg
 
 }
 
+@keyframes animate {
+  0% {
+      letter-spacing: -15px;
+  }
+
+  20% {
+      letter-spacing: 10px;
+  }
+
+  100% {
+      letter-spacing: 2px;
+  }
+}
 
 
 header .hero {
@@ -140,6 +170,11 @@ header .hero {
 header .hero h1 {
   font-family: 'Janna LT', sans-serif;
   font-size: 3rem;
+}
+header .hero h1.active {
+  animation: animate 3s ease-out forwards infinite;
+  animation-delay: 1s;
+  letter-spacing: 15px;  
 }
 
 header .hero h2 {
@@ -200,7 +235,7 @@ header .slider a.btn-slider {
 
 header .slider a.btn-slider span {
   background-color: #7A5D7A;
-  padding: 4px;
+  padding: 4px 40px;
   display: inline-block;
 }
 
@@ -269,6 +304,7 @@ body.rtl #about::after {
 
 #about .about-img {
   right: 0;
+  z-index: 2 !important;
 }
 
 body.rtl #about .about-img {
@@ -433,8 +469,8 @@ body.rtl #about::before {
 
 .rtl .x2 {
 	-webkit-animation: animateCloudrtl 50s linear infinite;
-	-moz-animation: animateCloudrtl 50s linear infinite;
-	animation: animateCloudrtl 50s linear infinite;
+	-moz-animation: animateCloudrtl 70s linear infinite;
+	animation: animateCloudrtl 70s linear infinite;
   display: none;
 
 }
@@ -537,6 +573,10 @@ body.rtl #about::before {
 #features h2 {
   color: #324C5E;
 }
+#features .image-wrapper {
+  min-height: 80px;
+}
+
 
 
 #info {
@@ -639,6 +679,10 @@ body.rtl #footer .block::after {
   content: "";
   bottom: 0;
   left: calc(50% - 35px);
+}
+
+#page-section .image-wrapper {
+  min-height: 150px;
 }
 
 
@@ -834,6 +878,7 @@ body.rtl #footer .block::after {
     right: auto;
     left: auto;
     bottom: 0;
+    z-index: 2 !important;
   }
 
   #counters .body p {

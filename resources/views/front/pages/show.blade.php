@@ -14,7 +14,7 @@
 
 			<div class="container ">
 				<div class="d-flex justify-content-evenly align-items-center">
-					<div class="col-12 col-sm-6 page-title text-center mb-2 mt-5 text-center">
+					<div class="col-12 col-sm-6 page-title text-center mb-2 mt-5 text-center" data-aos="fade-down" data-aos-duration="1000">
 						<h5 class="text-uppercase pb-3">{{$page->getSubTitle()}}</h5>
 					</div>
 		
@@ -28,14 +28,19 @@
 
 						@if($block->slug == 'business-analytics')
 						
-							<div class="d-flex flex-wrap justify-content-sm-center align-items-center mt-5  h-100">
+							<div class="row justify-content-around mt-5  h-100" >
 								
 								@if(count($block->attributes)>0)
 
-									@foreach($block->attributes as $attribute)
+									@foreach($block->attributes as $key => $attribute)
 
-									<div class="col-12 col-sm-3 text-center mb-3">
-										<img class="mb-3 " src="{{url($attribute->image ?? 'assets/images/Ellipse.png')}}" alt="">
+									<div class="col-12 col-sm-3 text-center mb-3" data-aos="flip-left"
+									data-aos-easing="ease-out-cubic"
+									data-aos-duration="{{$key}}000">
+										<div class="mb-3 image-wrapper d-flex align-items-center">
+											<img class="w-auto m-auto " src="{{url($attribute->image ?? 'assets/images/Ellipse.png')}}" alt="">
+										</div>
+										
 										<div>
 											<p class="mb-1"><small >{{$attribute->getSubTitle()}}</small></p>
 											<h2 class="mb-1">{{$attribute->counter}}</h2>
@@ -61,7 +66,7 @@
 			<div class="container ">
 				<div class="d-flex justify-content-evenly align-items-center">
 					<div class="col-12 col-sm-6 page-title text-center mb-2 mt-5">
-						<h5 class="text-uppercase pb-3 text-center">{{$page->getSubTitle()}}</h5>
+						<h5 class="text-uppercase pb-3 text-center" data-aos="fade-down" data-aos-duration="1000">{{$page->getSubTitle()}}</h5>
 					</div>
 		
 				</div>
@@ -69,10 +74,12 @@
 			<div class="container mt-5">
 
 				@if(count($partners) > 0)
-					<div class="d-flex flex-wrap justify-content-center">
-						@foreach($partners as $partner)
-							<div class="col-12 col-sm-3 text-center mb-5 mt-5">
-								<img class="mb-2" src="{{url($partner->logo ?? 'assets/images/Ellipse.png')}}" alt="">
+					<div class="row justify-content-around">
+						@foreach($partners as $key => $partner)
+							<div class="col-12 col-sm-3 text-center mb-5 mt-5 d-flex align-items-center" data-aos="flip-left"
+							data-aos-easing="ease-out-cubic"
+							data-aos-duration="{{$key}}000">
+								<img class="w-auto m-auto" src="{{url($partner->logo ?? 'assets/images/Ellipse.png')}}" alt="">
 							</div>
 						@endforeach
 					</div>
@@ -89,7 +96,7 @@
 			<div class="container ">
 				<div class="d-flex justify-content-evenly align-items-center">
 					<div class="col-12 col-sm-6 page-title text-center mb-5 mt-5 text-center">
-						<h5 class="text-uppercase pb-3">{{$page->getSubTitle()}}</h5>
+						<h5 class="text-uppercase pb-3" data-aos="fade-down" data-aos-duration="1000">{{$page->getSubTitle()}}</h5>
 					</div>
 		
 				</div>
@@ -101,13 +108,15 @@
 				@foreach($page->blocks as $block)
 
 					@if($block->slug == 'live-analytics')
-						<div class="d-flex flex-wrap justify-content-sm-center align-items-center  h-100">
+						<div class="d-flex flex-wrap justify-content-sm-center align-items-center  h-100" >
 							
 							@if(count($block->attributes)>0)
 
-								@foreach($block->attributes as $attribute)
+								@foreach($block->attributes as $key => $attribute)
 
-								<div class="col-12 col-sm-4 text-center p-3">
+								<div class="col-12 col-sm-4 text-center p-3" data-aos="flip-left"
+								data-aos-easing="ease-out-cubic"
+								data-aos-duration="{{$key}}000">
 									<img class="img-fluid mb-5" src="{{url($attribute->image ?? 'https://fakeimg.pl/350x200/?text=World&font=lobster')}}">
 									<div>
 										<img class="mb-3" src="{{url($attribute->icon ?? 'images/Ellipse.png')}}" alt="">
