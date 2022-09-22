@@ -42,6 +42,8 @@ return [
 'if_you_have_account_you_can_login_from_here' => 'إذا  كان لديك حساب قم بتسجيل دخول  <a href="login"> من هنا </a>',
 'name_ar' => 'الاسم الكامل',
 'password_confirmation' => 'تأكيد كلمة المرور',
+'fullname' => 'Full Name',
+'message' => 'Message',
 'fname' => 'first name',
 'lname' => 'last name',
 'phone' => 'Phone',

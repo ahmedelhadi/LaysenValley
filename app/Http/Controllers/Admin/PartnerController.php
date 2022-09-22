@@ -15,10 +15,7 @@ use App\Http\Requests\Partner\StorePartnerRequest;
 use App\Http\Requests\Partner\UpdatePartnerRequest;
 
 use App\Models\Partner;
-use App\Models\Kind;
-use App\Models\User;
-use App\Models\Log;
-use App\Models\Project;
+use App\Models\Page;
 
 class PartnerController extends Controller
 {
@@ -46,9 +43,8 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        $users = User::doesntHave('roles')->whereDoesntHave('partner')->get();
-        $kinds = Kind::where('is_active',1)->get();
-        return view('admin.partners.create',compact('users','kinds'));
+        $pages = Page::where('is_active',1)->get();
+        return view('admin.partners.create',compact('pages'));
     }
 
     /**
@@ -67,17 +63,12 @@ class PartnerController extends Controller
             $requests['logo'] = $this->uploadImage($requests['logo']);
         }
 
-        //portfolio
-        if (isset($requests['portfolio'])) {
-            $requests['portfolio'] = $this->uploadImage($requests['portfolio']);
+
+        if (isset($requests['icon'])) {
+            $requests['icon'] = $this->uploadImage($requests['icon']);
         }
 
-        //proof_file
-        if (isset($requests['proof_file'])) {
-            $requests['proof_file'] = $this->uploadImage($requests['proof_file']);
-        }
 
-        $requests['id']  = Str::uuid();
         $partner = Partner::create($requests);
 
         Session::flash('status', __('admin.success'));
@@ -107,9 +98,8 @@ class PartnerController extends Controller
     public function edit($id)
     {
         $partner = Partner::findOrFail($id);
-        $kinds = Kind::where('is_active',1)->get();
-        $users = User::all();
-        return view('admin.partners.edit',compact('partner','users','kinds'));
+        $pages = Page::where('is_active',1)->get();
+        return view('admin.partners.edit',compact('partner','pages'));
     }
 
     /**
@@ -127,6 +117,10 @@ class PartnerController extends Controller
         //logo
         if (isset($requests['logo'])) {
             $requests['logo'] = $this->uploadImage($requests['logo']);
+        }
+
+        if (isset($requests['icon'])) {
+            $requests['icon'] = $this->uploadImage($requests['icon']);
         }
 
 

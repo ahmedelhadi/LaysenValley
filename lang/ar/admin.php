@@ -128,6 +128,8 @@ return [
     'id_number'     => 'رقم الهوية',
     'read_all_notifications' => 'مشاهدة جميع التنبيهات' ,
     'new' => 'جديد' ,
+    'unit_number' => 'رقم الوحدة',
+    'page_block' => 'صفحة البلوك',
 
 
     'author_requests' => 'طلبات المؤلفون',

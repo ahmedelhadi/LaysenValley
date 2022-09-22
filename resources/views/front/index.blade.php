@@ -18,7 +18,11 @@
         </div>
 
         <div class="col-12 col-sm-7 offset-sm-1 position-absolute about-img  decor-1" data-aos="fade-right" data-aos-duration="1000">
-            <img class="img-fluid block-image" src="{{$about->image ?? 'https://fakeimg.pl/1092x800/'}}  ">
+            <video playsinline autoplay muted loop poster="" id="bgvid">
+                <source src="{{url('assets/images/Clouds.mp4')}}" type="video/mp4">
+            </video>
+
+            <img class="img-fluid block-image" src="{{$about->image ?? 'https://fakeimg.pl/1092x800/'}}">
         </div>
     </div>
 </section>

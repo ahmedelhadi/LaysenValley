@@ -12,15 +12,17 @@ class Partner extends Model
     use HasFactory , SoftDeletes;
 
     public $casts = ['id' => 'string','title' => 'array','desc'=>'array'];
-    public $fillable = ['id','title','desc' , 'url', 'mobile', 'email','proof_file','user_id' ,'kind_id' ,'logo','portfolio' ,'type','social_security','wathq', 'slug','is_active','cod'];
+    public $fillable = ['id','title','desc' , 'url', 'mobile', 'email','proof_file','user_id' ,'kind_id' ,'logo','portfolio' ,'type','social_security','wathq', 'slug','is_active','cod','unit_number','page_id'];
 
 
     public function getTitle()
     {
         if (array_key_exists(App::getLocale(),$this->title)) {
             return $this->title[App::getLocale()];
+        }elseif(array_key_exists(config('app.fallback_locale'),$this->title)) {
+            return $this->title[config('app.fallback_locale')];
         }
-        return $this->title[config('app.fallback_locale')];
+        return false;
     }
 
     public function getDesc()

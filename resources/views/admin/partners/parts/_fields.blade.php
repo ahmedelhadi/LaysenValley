@@ -68,26 +68,26 @@
 --}}
 
 <div class="mb-2">
-    {!! Form::label('image', trans('admin.image') , ['class' => 'form-label'] ) !!}
-    @if(isset($partner->image))
+    {!! Form::label('logo', trans('admin.logo') , ['class' => 'form-label'] ) !!}
+    @if(isset($partner->logo))
         <div class="row">
             <div class="col-1">
-                <a href="" data-bs-toggle="modal" data-bs-target="#image">
-                    <img src="{{ url($partner->image) }}" class="img-fluid rounded-lg">
+                <a href="" data-bs-toggle="modal" data-bs-target="#logo">
+                    <img src="{{ url($partner->logo) }}" class="img-fluid rounded-lg">
                 </a>
 
-                @include('admin.parts.modal',['id' => 'image','url' => url($partner->image) ])
+                @include('admin.parts.modal',['id' => 'logo','url' => url($partner->logo) ])
 
                 
             </div>
             <div class="col-11">
-                {!! Form::file('image', ['id' => 'inputGroupFile01', 'class' => 'form-control']) !!}
+                {!! Form::file('logo', ['id' => 'inputGroupFile01', 'class' => 'form-control']) !!}
 
             </div>
         </div> 
 
     @else 
-        {!! Form::file('image', ['id' => 'inputGroupFile01', 'class' => 'form-control']) !!}
+        {!! Form::file('logo', ['id' => 'inputGroupFile01', 'class' => 'form-control']) !!}
     @endif
 </div>
 
@@ -120,6 +120,12 @@
 <div class="mb-2">
     {!! Form::label('page_id', trans('admin.page') , ['class' => 'form-label'] ) !!}
     {!! Form::select('page_id', $pages->pluck('title.'.App::getLocale(),'id'), $cover->page_id ?? Request::get('page_id'), ['required', 'class' => 'form-control','placeholder'=>trans('admin.choose')]) !!}
+</div>
+
+
+<div class="mb-2">
+    {!! Form::label('unit_number', trans('admin.unit_number') , ['class' => 'form-label'] ) !!}
+    {!! Form::text('unit_number', $partner->unit_number ?? 1, ['required', 'class' => 'form-control']) !!}
 </div>
 
 

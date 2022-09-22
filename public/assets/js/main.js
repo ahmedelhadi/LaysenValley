@@ -8,6 +8,20 @@ $(document).ready(function(){
         var dir = false;
     }
 
+    
+    $('.partner img').hover(function(){
+        
+        $('.map text').css('display','none');
+        let count = $(this).data('count');
+        let id = $(this).data('id');
+
+
+        $("path[data-name="+id+"]").attr('fill','#233D3B');
+        $("text[data-name="+id+"]").css('display','block');
+        //$('#'+id).attr('fill','#233D3B');
+        //$('<textPath xlink:href="#'+id+'">'+count+'</textPath>').insertAfter($('#'+id));
+        
+    })
 
     $('.slider').slick({
         slidesToShow: 1,
@@ -35,7 +49,7 @@ $(document).ready(function(){
         $(window).scroll(function() {
             var header = $('header').height();
             
-            if ($(window).scrollTop() >= header) {
+            if ($(window).scrollTop() >= header && !$('body').hasClass('page-contact-us')) {
                 navigatoinBar.addClass('navbar-fixed-top');
             } else{
                 navigatoinBar.removeClass('navbar-fixed-top');
@@ -44,7 +58,7 @@ $(document).ready(function(){
     }
     animateNavigationBar();
 
-    $(".hero").on("wheel", function(e) {
+    $(".page-home .hero").on("wheel", function(e) {
         e.preventDefault();
 
         let section_id = $(this).index();

@@ -14,7 +14,7 @@
                         <a class="nav-link {{ Request::is('/') ? 'active' : '' }} " aria-current="page" href="{{url('/')}}">{{trans('file.about')}}</a>
                         <a class="nav-link {{ request()->segment(2) == 'business' ? 'active' : '' }}" href="{{url('/pages/business')}}">{{trans('file.business')}}</a>
                         <a class="nav-link {{ request()->segment(2) == 'taste' ? 'active' : '' }}" href="{{url('/pages/taste')}}">{{trans('file.taste')}}</a>
-                        <a class="nav-link {{ request()->segment(2) == 'live' ? 'active' : '' }}"  href="{{url('/pages/live')}}">{{trans('file.live')}}</a>
+                        <!-- <a class="nav-link {{ request()->segment(2) == 'live' ? 'active' : '' }}"  href="{{url('/pages/live')}}">{{trans('file.live')}}</a> -->
                         <a class="nav-link {{ request()->segment(2) == 'contact-us' ? 'active' : '' }}"  href="{{url('/pages/contact-us')}}">{{trans('file.contact_us')}}</a>
 
                         @foreach (Config::get('languages') as $lang => $language)
@@ -37,9 +37,14 @@
                   
                     @if(count($page->slider->slides) > 0)
                         @foreach($page->slider->slides as $slide)
-                            <div class="h-100 d-flex justify-content-center align-items-center" style="background: url('{{url($slide->image)}}') no-repeat;background-size: cover;" data-aos="zoom-in-down" data-aos-duration="2000">
+                            <div class="h-100 d-flex justify-content-center align-items-center @if($page->slug == 'taste') smoke-slider @endif" style="background: url('{{url($slide->image)}}') no-repeat;background-size: cover;" data-aos="zoom-in-down" data-aos-duration="2000">
 
                                 @if($page->slug == 'taste')
+
+                                <video playsinline autoplay muted loop poster="" id="bgvid">
+                                    <source src="{{url('assets/images/smoke.mp4')}}" type="video/mp4">
+                                </video>
+
 
                                 {{-- <div id="smoke">
                                     <span class="s0"></span>
@@ -77,6 +82,8 @@
                     @endif
 
                 </div>
+            @elseif($page->slug == 'contact-us')
+
             @else 
             <div class="hero h-50 d-flex justify-content-center align-items-center">
                 <div class="col-12 col-sm-8  text-center  text-white">

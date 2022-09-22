@@ -56,8 +56,9 @@ class FrontController extends Controller
     {
         $page = Page::whereSlug($slug)->first();
         if ($page) {
-            $partners = Partner::where('is_active',1)->get();
-            return view('front.pages.show',compact('page','partners'));
+            $partners = Partner::where('is_active',1)->whereNull('page_id')->get();
+            $partners_business = Partner::where('is_active',1)->whereNotNull('page_id')->get();
+            return view('front.pages.show',compact('page','partners','partners_business'));
         }
         return view('front.pages.error');
     }
