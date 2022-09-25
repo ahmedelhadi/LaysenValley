@@ -29,6 +29,7 @@ return [
 'media_center' => 'مركز الوسائط',
 'gallery' => 'البوم الصور',
 'contact_center' => 'مركز الاتصال',
+'information' => 'معلومات',
 'stay_connected' => 'كن على تواصل',
 'owned_by' => 'بواسطة',
 'privacy_policy' => 'سياسية الخصوصية',
@@ -56,6 +57,7 @@ return [
 'name' => 'الاسم',
 'features' => 'المميزات',
 'notfound' =>'غير موجود',
+'all_copyrights_reserved' =>'جميع الحقوق محفوظة',
 
 ];
 

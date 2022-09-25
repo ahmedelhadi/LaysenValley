@@ -44,6 +44,8 @@ return [
 'password_confirmation' => 'تأكيد كلمة المرور',
 'fullname' => 'Full Name',
 'message' => 'Message',
+'information' => 'information',
+
 'fname' => 'first name',
 'lname' => 'last name',
 'phone' => 'Phone',
@@ -61,5 +63,6 @@ return [
 'name' => 'Name',
 'features' => 'Features',
 'notfound' =>'Not Found',
+'all_copyrights_reserved' =>'all copyrights reserved by',
 
 ];
