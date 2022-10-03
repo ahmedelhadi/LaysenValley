@@ -29,7 +29,7 @@
 					@if(count($partners_business) > 0)
 						<div class="row justify-content-around">
 							@foreach($partners_business as $key => $partner)
-								<div class="col-6 col-sm-3 text-center mb-2 mt-2 text-center align-items-center partner" >
+								<div class="col-6 col-sm-3 text-center mb-2 mt-2 text-center align-items-center partner row" >
 									<div class="partner-wrapper">
 									  <img  data-id="{{$partner->unit_number}}" data-count="7"  class="img-fluid" src="{{url('assets/logos/'.$partner->unit_number.'.png')}}" alt="">
                   </div>
