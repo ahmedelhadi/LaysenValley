@@ -31,7 +31,7 @@
 							@foreach($partners_business as $key => $partner)
 								<div class="col-6 col-sm-3 text-center mb-5 mt-5 d-flex align-items-center partner" >
 									<div class="partner-wrapper">
-									  <img  data-id="{{$partner->unit_number}}" data-count="7"  class="img-fluid" src="{{url($partner->logo ?? 'assets/images/Ellipse.png')}}" alt="">
+									  <img  data-id="{{$partner->unit_number}}" data-count="7"  class="img-fluid" src="{{url('assets/logos/'.$partner->unit_number.'.png')}}" alt="">
                   </div>
 								</div>
 							@endforeach
