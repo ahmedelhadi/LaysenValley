@@ -85,7 +85,7 @@ $(document).ready(function(){
                 if (direction > 0 ) {
 
                     if($('.hero h1').hasClass('active')){
-                        $("html, body").stop().animate({scrollTop:$('#about').offset().top}, 500);
+                        $("html, body").stop().animate({scrollTop:$('#about').offset().top}, 1);
 
                     }else {
                         $('.hero h1').addClass('active');

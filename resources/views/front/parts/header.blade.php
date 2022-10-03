@@ -58,8 +58,9 @@
                                     <span class="s8"></span>
                                     <span class="s9"></span>
                                   </div> --}}
-                                  
-                                <div class="smoke-wrap">
+
+                                  {{-- 
+                                    <div class="smoke-wrap">
                                     <img class="smoke" src="{{asset('assets/images/smoke.png')}}" alt="smoke">
                                   </div>
                                   <div class="smoke-wrap">
@@ -68,7 +69,7 @@
                                   <div class="smoke-wrap">
                                     <img class="smoke3" src="{{asset('assets/images/smoke.png')}}" alt="smoke">
                                   </div>
-
+--}}
                                   
                                 @endif
                                   
