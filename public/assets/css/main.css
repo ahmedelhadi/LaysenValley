@@ -752,7 +752,7 @@ body.rtl #footer .block::after {
 
 
 .partner-wrapper img {
-  max-height: 40px;
+  /* max-height: 40px; */
 }
 
 .map text {
