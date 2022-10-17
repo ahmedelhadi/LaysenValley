@@ -79,9 +79,12 @@ class BlockController extends Controller
 
         $block = Block::create($requests);
 
-        $page = Page::findorfail($request->page_id);
 
-        $page->blocks()->sync($block->id);
+        $page = Page::find($request->page_id);
+        if($page) {
+            $page->blocks()->sync($block->id);
+
+        }
 
         Session::flash('status', __('admin.success'));
         Session::flash('message', __('admin.create_success'));
@@ -138,8 +141,11 @@ class BlockController extends Controller
         $block = $block->update($requests);
         $block = Block::findOrFail($id);
 
-        $page = Page::findorfail($request->page_id);
-        $page->blocks()->sync($block->id);
+        $page = Page::find($request->page_id);
+        if($page) {
+            $page->blocks()->sync($block->id);
+
+        }
 
         Session::flash('status', __('admin.success'));
         Session::flash('message', __('admin.update_success'));

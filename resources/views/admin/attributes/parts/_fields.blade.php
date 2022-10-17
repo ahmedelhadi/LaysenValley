@@ -13,19 +13,23 @@
 @endif
 
 
+
 <div class="mb-2">
     {!! Form::label('title-ar', trans('admin.title') , ['class' => 'form-label'] ) !!}
-    {!! Form::text('title[ar]', $attribute->title['ar'] ?? '', ['required', 'class' => 'form-control', 'autocomplete' => 'off', 'id' => 'title_ar']) !!}
+    {!! Form::text('title['.App::getLocale().']', $attribute->title[App::getLocale()] ?? '', ['required', 'class' => 'form-control', 'autocomplete' => 'off', 'id' => 'title_ar']) !!}
+
 </div>
 
 <div class="mb-2">
-    {!! Form::label('sub_title-ar', trans('admin.sub_title') , ['class' => 'form-label'] ) !!}
-    {!! Form::text('sub_title[ar]', $attribute->sub_title['ar'] ?? '', ['required', 'class' => 'form-control', 'autocomplete' => 'off', 'id' => 'title_ar']) !!}
+    {!! Form::label('sub_title-ar', trans('admin.title') , ['class' => 'form-label'] ) !!}
+    {!! Form::text('sub_title['.App::getLocale().']', $attribute->sub_title[App::getLocale()] ?? '', ['required', 'class' => 'form-control', 'autocomplete' => 'off', 'id' => 'title_ar']) !!}
 </div>
 
+
 <div class="mb-2">
+
     {!! Form::label('desc-ar' , trans('admin.desc')  , ['class' => 'form-label']) !!}
-    {!! Form::textarea('desc[ar]', $attribute->desc['ar']  ?? '' , [ 'class' => 'textarea form-control ckeditor', 'id' => 'ckeditor', 'placeholder' => trans('admin.desc'), 'rows' => 5 ]) !!}
+    {!! Form::textarea('desc['.App::getLocale().']', $attribute->desc[App::getLocale()]  ?? '' , [ 'class' => 'textarea form-control ckeditor', 'id' => 'ckeditor', 'placeholder' => trans('admin.desc'), 'rows' => 5 ]) !!}
 </div>
 
 {{--
