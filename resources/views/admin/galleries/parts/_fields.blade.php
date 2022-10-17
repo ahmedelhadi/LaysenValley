@@ -15,19 +15,20 @@
 
 <div class="mb-2">
     {!! Form::label('title-ar', trans('admin.title') , ['class' => 'form-label'] ) !!}
-    {!! Form::text('title[ar]', $gallery->title['ar'] ?? '', ['required', 'class' => 'form-control', 'autocomplete' => 'off', 'id' => 'title_ar']) !!}
+    {!! Form::text('title['.App::getLocale().']', $gallery->title[App::getLocale()] ?? '', ['required', 'class' => 'form-control', 'autocomplete' => 'off', 'id' => 'title_ar']) !!}
+
 </div>
 
 <div class="mb-2">
     {!! Form::label('sub_title-ar', trans('admin.sub_title') , ['class' => 'form-label'] ) !!}
-    {!! Form::text('sub_title[ar]', $gallery->sub_title['ar'] ?? '', ['class' => 'form-control', 'id' => 'sub_title']) !!}
+    {!! Form::text('sub_title['.App::getLocale().']', $gallery->sub_title[App::getLocale()] ?? '', ['required', 'class' => 'form-control', 'autocomplete' => 'off', 'id' => 'title_ar']) !!}
 </div>
 
 
 
 <div class="mb-2">
     {!! Form::label('desc-ar' , trans('admin.desc')  , ['class' => 'form-label']) !!}
-    {!! Form::textarea('desc[ar]', $gallery->desc['ar']  ?? '' , [ 'class' => 'textarea form-control ckeditor', 'id' => 'ckeditor', 'placeholder' => trans('admin.desc'), 'rows' => 5 ]) !!}
+    {!! Form::textarea('desc['.App::getLocale().']', $gallery->desc[App::getLocale()]  ?? '' , [ 'class' => 'textarea form-control ckeditor', 'id' => 'ckeditor', 'placeholder' => trans('admin.desc'), 'rows' => 5 ]) !!}
 </div>
 
 {{--

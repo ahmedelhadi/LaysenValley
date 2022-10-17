@@ -21,7 +21,7 @@
                 </div>
                 <div class=" mb-3">
 
-                    <input type="email"  wire:model="email" id="email" class="form-control" aria-describedby="email" placeholder="{{trans('file.email')}} *">
+                    <input type="email"  wire:model="email" id="email" class="form-control rtl" aria-describedby="email" placeholder="{{trans('file.email')}} *">
                 </div>
                 <div class=" mb-3">
 

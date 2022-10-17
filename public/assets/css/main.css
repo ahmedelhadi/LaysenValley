@@ -10,6 +10,10 @@
   direction: ltr;
 }
 
+.rtl {
+  direction: rtl;
+}
+
 body {
   font-size: 16px;
   font-family: 'Janna LT', sans-serif;
